@@ -109,7 +109,7 @@ module Apartment
       #   @param {String} database Database name
       #
       def create_database(database)
-        Apartment.connection.create_database( environmentify(database) )
+        Apartment.connection.create_database( environmentify(database), @config )
 
       rescue *rescuable_exceptions
         raise DatabaseExists, "The database #{environmentify(database)} already exists."
