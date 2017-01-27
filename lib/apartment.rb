@@ -9,7 +9,7 @@ module Apartment
     extend Forwardable
 
     ACCESSOR_METHODS  = [:use_schemas, :seed_after_create, :prepend_environment, :append_environment]
-    WRITER_METHODS    = [:database_names, :database_schema_file, :excluded_models, :default_schema, :persistent_schemas, :connection_class]
+    WRITER_METHODS    = [:database_names, :database_structure_file, :database_schema_file, :excluded_models, :default_schema, :persistent_schemas, :connection_class]
 
     attr_accessor(*ACCESSOR_METHODS)
     attr_writer(*WRITER_METHODS)
@@ -41,6 +41,12 @@ module Apartment
 
     def connection_class
       @connection_class || ActiveRecord::Base
+    end
+
+    def database_structure_file
+      return @database_structure_file if defined?(@database_structure_file)
+
+      @database_structure_file = Rails.root.join('db', 'structure.sql')
     end
 
     def database_schema_file
