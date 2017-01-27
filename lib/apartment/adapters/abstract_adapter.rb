@@ -170,8 +170,8 @@ module Apartment
       #
       def load_or_abort_sql(file)
         if File.exists?(file)
-          sql_statements = File.read(file)
-          Apartment.connection.execute( sql_statements )
+          sql_statements = File.read(file).split(";").map{ |q| q.strip }
+          sql_statements.each { |sql| Apartment.connection.execute( sql ) }
         else
           abort %{#{file} doesn't exist yet}
         end
