@@ -1,0 +1,362 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/06f9fde/
+#adapter	spec/tenant_spec.rb	/^    describe "#adapter" do$/;"	d
+#append	spec/adapters/sqlite3_adapter_spec.rb	/^      describe "#append" do$/;"	d
+#call	spec/unit/elevators/domain_spec.rb	/^  describe "#call" do$/;"	d
+#call	spec/unit/elevators/generic_spec.rb	/^  describe "#call" do$/;"	d
+#call	spec/unit/elevators/host_hash_spec.rb	/^  describe "#call" do$/;"	d
+#call	spec/unit/elevators/subdomain_spec.rb	/^  describe "#call" do$/;"	d
+#config	spec/unit/config_spec.rb	/^  describe "#config" do$/;"	d
+#create	spec/examples/generic_adapter_custom_configuration_example.rb	/^    describe "#create" do$/;"	d
+#create	spec/examples/generic_adapter_examples.rb	/^  describe "#create" do$/;"	d
+#create	spec/examples/schema_adapter_examples.rb	/^  describe "#create" do$/;"	d
+#create	spec/tenant_spec.rb	/^      describe "#create" do$/;"	d
+#current	spec/examples/generic_adapter_examples.rb	/^  describe "#current" do$/;"	d
+#current	spec/examples/schema_adapter_examples.rb	/^  describe "#current" do$/;"	d
+#default_tenant	spec/adapters/mysql2_adapter_spec.rb	/^      describe "#default_tenant" do$/;"	d
+#drop	spec/examples/connection_adapter_examples.rb	/^  describe "#drop" do$/;"	d
+#drop	spec/examples/generic_adapter_custom_configuration_example.rb	/^    describe "#drop" do$/;"	d
+#drop	spec/examples/generic_adapter_examples.rb	/^  describe "#drop" do$/;"	d
+#drop	spec/examples/schema_adapter_examples.rb	/^  describe "#drop" do$/;"	d
+#each	spec/examples/generic_adapter_examples.rb	/^  describe "#each" do$/;"	d
+#init	spec/adapters/mysql2_adapter_spec.rb	/^      describe "#init" do$/;"	d
+#init	spec/examples/connection_adapter_examples.rb	/^  describe "#init" do$/;"	d
+#init	spec/examples/schema_adapter_examples.rb	/^  describe "#init" do$/;"	d
+#migrate	spec/integration/apartment_rake_integration_spec.rb	/^    describe "#migrate" do$/;"	d
+#neither	spec/adapters/sqlite3_adapter_spec.rb	/^      describe "#neither" do$/;"	d
+#parse_tenant_name	spec/unit/elevators/domain_spec.rb	/^  describe "#parse_tenant_name" do$/;"	d
+#parse_tenant_name	spec/unit/elevators/host_hash_spec.rb	/^  describe "#parse_tenant_name" do$/;"	d
+#parse_tenant_name	spec/unit/elevators/subdomain_spec.rb	/^  describe "#parse_tenant_name" do$/;"	d
+#prepend	spec/adapters/sqlite3_adapter_spec.rb	/^      describe "#prepend" do$/;"	d
+#process	spec/examples/generic_adapter_examples.rb	/^  describe "#process" do$/;"	d
+#reset	spec/examples/generic_adapter_examples.rb	/^  describe "#reset" do$/;"	d
+#reset	spec/examples/schema_adapter_examples.rb	/^  describe "#reset" do$/;"	d
+#rollback	spec/integration/apartment_rake_integration_spec.rb	/^    describe "#rollback" do$/;"	d
+#switch	spec/examples/generic_adapter_examples.rb	/^  describe "#switch" do$/;"	d
+#switch	spec/examples/schema_adapter_examples.rb	/^  describe "#switch" do$/;"	d
+#switch!	spec/examples/connection_adapter_examples.rb	/^  describe "#switch!" do$/;"	d
+#switch!	spec/examples/generic_adapter_custom_configuration_example.rb	/^    describe "#switch!" do$/;"	d
+#switch!	spec/examples/generic_adapter_examples.rb	/^  describe "#switch!" do$/;"	d
+#switch!	spec/examples/schema_adapter_examples.rb	/^  describe "#switch!" do$/;"	d
+#switch!	spec/tenant_spec.rb	/^      describe "#switch!" do$/;"	d
+::migrate	spec/unit/migrator_spec.rb	/^  describe "::migrate" do$/;"	d
+::rollback	spec/unit/migrator_spec.rb	/^  describe "::rollback" do$/;"	d
+::run	spec/unit/migrator_spec.rb	/^  describe "::run" do$/;"	d
+AbstractAdapter	lib/apartment/adapters/abstract_adapter.rb	/^    class AbstractAdapter$/;"	c	module:Apartment.Adapters
+AbstractJDBCAdapter	lib/apartment/adapters/abstract_jdbc_adapter.rb	/^    class AbstractJDBCAdapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+AdapterRequirements	spec/support/requirements.rb	/^    module AdapterRequirements$/;"	m	module:Apartment.Spec
+Adapters	lib/apartment/adapters/abstract_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/abstract_jdbc_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/mysql2_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/postgresql_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Adapters	lib/apartment/adapters/sqlite3_adapter.rb	/^  module Adapters$/;"	m	module:Apartment
+Apartment	lib/apartment.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/abstract_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/abstract_jdbc_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/mysql2_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/postgis_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/postgresql_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/adapters/sqlite3_adapter.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/deprecation.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/elevators/domain.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/elevators/first_subdomain.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/elevators/generic.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/elevators/host_hash.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/elevators/subdomain.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/migrator.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/railtie.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/reloader.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/tasks/enhancements.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/tenant.rb	/^module Apartment$/;"	m
+Apartment	lib/apartment/version.rb	/^module Apartment$/;"	m
+Apartment	lib/generators/apartment/install/install_generator.rb	/^module Apartment$/;"	m
+Apartment	spec/apartment_spec.rb	/^describe Apartment do$/;"	d
+Apartment	spec/support/apartment_helpers.rb	/^module Apartment$/;"	m
+Apartment	spec/support/config.rb	/^module Apartment$/;"	m
+Apartment	spec/support/requirements.rb	/^module Apartment$/;"	m
+Apartment	spec/support/setup.rb	/^module Apartment$/;"	m
+Apartment	spec/unit/config_spec.rb	/^describe Apartment do$/;"	d
+Apartment::Adapters::JDBCMysqlAdapter, database: :mysql	spec/adapters/jdbc_mysql_adapter_spec.rb	/^  describe Apartment::Adapters::JDBCMysqlAdapter, database: :mysql do$/;"	d
+Apartment::Adapters::JDBCPostgresqlAdapter, database: :postgresql	spec/adapters/jdbc_postgresql_adapter_spec.rb	/^  describe Apartment::Adapters::JDBCPostgresqlAdapter, database: :postgresql do$/;"	d
+Apartment::Adapters::Mysql2Adapter, database: :mysql	spec/adapters/mysql2_adapter_spec.rb	/^describe Apartment::Adapters::Mysql2Adapter, database: :mysql do$/;"	d
+Apartment::Adapters::PostgresqlAdapter, database: :postgresql	spec/adapters/postgresql_adapter_spec.rb	/^describe Apartment::Adapters::PostgresqlAdapter, database: :postgresql do$/;"	d
+Apartment::Adapters::Sqlite3Adapter, database: :sqlite	spec/adapters/sqlite3_adapter_spec.rb	/^describe Apartment::Adapters::Sqlite3Adapter, database: :sqlite do$/;"	d
+Apartment::Elevators::Domain	spec/unit/elevators/domain_spec.rb	/^describe Apartment::Elevators::Domain do$/;"	d
+Apartment::Elevators::FirstSubdomain	spec/unit/elevators/first_subdomain_spec.rb	/^describe Apartment::Elevators::FirstSubdomain do$/;"	d
+Apartment::Elevators::Generic	spec/unit/elevators/generic_spec.rb	/^describe Apartment::Elevators::Generic do$/;"	d
+Apartment::Elevators::HostHash	spec/unit/elevators/host_hash_spec.rb	/^describe Apartment::Elevators::HostHash do$/;"	d
+Apartment::Elevators::Subdomain	spec/unit/elevators/subdomain_spec.rb	/^describe Apartment::Elevators::Subdomain do$/;"	d
+Apartment::Migrator	spec/unit/migrator_spec.rb	/^describe Apartment::Migrator do$/;"	d
+Apartment::Reloader	spec/unit/reloader_spec.rb	/^describe Apartment::Reloader do$/;"	d
+Apartment::Tenant	spec/tenant_spec.rb	/^describe Apartment::Tenant do$/;"	d
+Application	spec/dummy/config/application.rb	/^  class Application < Rails::Application$/;"	c	module:Dummy
+Application	spec/dummy_engine/test/dummy/config/application.rb	/^  class Application < Rails::Application$/;"	c	module:Dummy
+ApplicationController	spec/dummy/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	spec/dummy/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CapybaraSessions	spec/support/capybara_sessions.rb	/^    module CapybaraSessions$/;"	m	module:RSpec.Integration
+Company	spec/dummy/app/models/company.rb	/^class Company < ActiveRecord::Base$/;"	c
+CreateDummyModels	spec/dummy/db/migrate/20110613152810_create_dummy_models.rb	/^class CreateDummyModels < ActiveRecord::Migration$/;"	c
+CreateTableBooks	spec/dummy/db/migrate/20111202022214_create_table_books.rb	/^class CreateTableBooks < ActiveRecord::Migration$/;"	c
+Deprecation	lib/apartment/deprecation.rb	/^  module Deprecation$/;"	m	module:Apartment
+Domain	lib/apartment/elevators/domain.rb	/^    class Domain < Generic$/;"	c	module:Apartment.Elevators
+Dummy	spec/dummy/config/application.rb	/^module Dummy$/;"	m
+Dummy	spec/dummy_engine/test/dummy/config/application.rb	/^module Dummy$/;"	m
+DummyEngine	spec/dummy_engine/lib/dummy_engine.rb	/^module DummyEngine$/;"	m
+DummyEngine	spec/dummy_engine/lib/dummy_engine/engine.rb	/^module DummyEngine$/;"	m
+DummyEngine	spec/dummy_engine/lib/dummy_engine/version.rb	/^module DummyEngine$/;"	m
+Elevators	lib/apartment/elevators/domain.rb	/^  module Elevators$/;"	m	module:Apartment
+Elevators	lib/apartment/elevators/first_subdomain.rb	/^  module Elevators$/;"	m	module:Apartment
+Elevators	lib/apartment/elevators/generic.rb	/^  module Elevators$/;"	m	module:Apartment
+Elevators	lib/apartment/elevators/host_hash.rb	/^  module Elevators$/;"	m	module:Apartment
+Elevators	lib/apartment/elevators/subdomain.rb	/^  module Elevators$/;"	m	module:Apartment
+Engine	spec/dummy_engine/lib/dummy_engine/engine.rb	/^  class Engine < ::Rails::Engine$/;"	c	module:DummyEngine
+FirstSubdomain	lib/apartment/elevators/first_subdomain.rb	/^    class FirstSubdomain < Subdomain$/;"	c	module:Apartment.Elevators
+Generic	lib/apartment/elevators/generic.rb	/^    class Generic$/;"	c	module:Apartment.Elevators
+HostHash	lib/apartment/elevators/host_hash.rb	/^    class HostHash < Generic$/;"	c	module:Apartment.Elevators
+InstallGenerator	lib/generators/apartment/install/install_generator.rb	/^  class InstallGenerator < Rails::Generators::Base$/;"	c	module:Apartment
+Integration	spec/support/capybara_sessions.rb	/^  module Integration$/;"	m	module:RSpec
+JDBCMysqlAdapter	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^    class JDBCMysqlAdapter < AbstractJDBCAdapter$/;"	c	module:Apartment.Adapters
+JDBCPostgresqlAdapter	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^    class JDBCPostgresqlAdapter < PostgresqlAdapter$/;"	c	module:Apartment.Adapters
+JDBCPostgresqlSchemaAdapter	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^    class JDBCPostgresqlSchemaAdapter < PostgresqlSchemaAdapter$/;"	c	module:Apartment.Adapters
+Migrator	lib/apartment/migrator.rb	/^  module Migrator$/;"	m	module:Apartment
+MyElevator	spec/unit/elevators/generic_spec.rb	/^  class MyElevator < described_class$/;"	c
+Mysql2Adapter	lib/apartment/adapters/mysql2_adapter.rb	/^    class Mysql2Adapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+Mysql2SchemaAdapter	lib/apartment/adapters/mysql2_adapter.rb	/^    class Mysql2SchemaAdapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+PostgresqlAdapter	lib/apartment/adapters/postgresql_adapter.rb	/^    class PostgresqlAdapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+PostgresqlSchemaAdapter	lib/apartment/adapters/postgresql_adapter.rb	/^    class PostgresqlSchemaAdapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+PostgresqlSchemaFromSqlAdapter	lib/apartment/adapters/postgresql_adapter.rb	/^    class PostgresqlSchemaFromSqlAdapter < PostgresqlSchemaAdapter$/;"	c	module:Apartment.Adapters
+RSpec	spec/support/capybara_sessions.rb	/^module RSpec$/;"	m
+Railtie	lib/apartment/railtie.rb	/^  class Railtie < Rails::Railtie$/;"	c	module:Apartment
+RakeTaskEnhancer	lib/apartment/tasks/enhancements.rb	/^  class RakeTaskEnhancer$/;"	c	module:Apartment
+Reloader	lib/apartment/reloader.rb	/^  class Reloader$/;"	c	module:Apartment
+SeparateDbConnectionHandler	lib/apartment/adapters/abstract_adapter.rb	/^      class SeparateDbConnectionHandler < ::ActiveRecord::Base$/;"	c	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+Setup	spec/support/setup.rb	/^    module Setup$/;"	m	module:Apartment.Spec
+Spec	spec/support/requirements.rb	/^  module Spec$/;"	m	module:Apartment
+Spec	spec/support/setup.rb	/^  module Spec$/;"	m	module:Apartment
+Sqlite3Adapter	lib/apartment/adapters/sqlite3_adapter.rb	/^    class Sqlite3Adapter < AbstractAdapter$/;"	c	module:Apartment.Adapters
+Subdomain	lib/apartment/elevators/subdomain.rb	/^    class Subdomain < Generic$/;"	c	module:Apartment.Elevators
+Tenant	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/adapters/mysql2_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/adapters/postgis_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/adapters/postgresql_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/adapters/sqlite3_adapter.rb	/^  module Tenant$/;"	m	module:Apartment
+Tenant	lib/apartment/tenant.rb	/^  module Tenant$/;"	m	module:Apartment
+Test	spec/support/apartment_helpers.rb	/^  module Test$/;"	m	module:Apartment
+Test	spec/support/config.rb	/^  module Test$/;"	m	module:Apartment
+The change you wanted was rejected.	spec/dummy/public/422.html	/^    <h1>The change you wanted was rejected.<\/h1>$/;"	h
+The page you were looking for doesn't exist.	spec/dummy/public/404.html	/^    <h1>The page you were looking for doesn't exist.<\/h1>$/;"	h
+User	spec/dummy/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+We're sorry, but something went wrong.	spec/dummy/public/500.html	/^    <h1>We're sorry, but something went wrong.<\/h1>$/;"	h
+adapter	lib/apartment/tenant.rb	/^    def adapter$/;"	f	module:Apartment.Tenant
+apartment rake tasks	spec/tasks/apartment_rake_spec.rb	/^describe "apartment rake tasks" do$/;"	d
+apartment:migrate	spec/tasks/apartment_rake_spec.rb	/^    describe "apartment:migrate" do$/;"	d
+apartment:migrate:down	spec/tasks/apartment_rake_spec.rb	/^    describe "apartment:migrate:down" do$/;"	d
+apartment:migrate:up	spec/tasks/apartment_rake_spec.rb	/^    describe "apartment:migrate:up" do$/;"	d
+apartment:rollback	spec/tasks/apartment_rake_spec.rb	/^    describe "apartment:rollback" do$/;"	d
+apartment:seed	spec/integration/apartment_rake_integration_spec.rb	/^    describe "apartment:seed" do$/;"	d
+assuming tld_length of 1	spec/unit/elevators/subdomain_spec.rb	/^    context "assuming tld_length of 1" do$/;"	c
+assuming tld_length of 2	spec/unit/elevators/subdomain_spec.rb	/^    context "assuming tld_length of 2" do$/;"	c
+call	lib/apartment/elevators/generic.rb	/^      def call(env)$/;"	f	class:Apartment.Elevators.Generic
+call	lib/apartment/reloader.rb	/^    def call(env)$/;"	f	class:Apartment.Reloader
+check_input_against_regexps	lib/apartment/adapters/postgresql_adapter.rb	/^      def check_input_against_regexps(input, regexps)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+clone_pg_schema	lib/apartment/adapters/postgresql_adapter.rb	/^      def clone_pg_schema$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+collect_table_names	lib/apartment/adapters/postgresql_adapter.rb	/^      def collect_table_names(models)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+config	lib/apartment/tenant.rb	/^    def config$/;"	f	module:Apartment.Tenant
+config	spec/support/config.rb	/^    def self.config$/;"	S	module:Apartment.Test
+config	spec/support/setup.rb	/^            def config$/;"	f	singletonMethod:Apartment.Spec.Setup.included
+configure	lib/apartment.rb	/^    def configure$/;"	f	module:Apartment
+connect_to_new	lib/apartment/adapters/abstract_adapter.rb	/^      def connect_to_new(tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+connect_to_new	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^      def connect_to_new(tenant = nil)$/;"	f	class:Apartment.Adapters.JDBCPostgresqlSchemaAdapter
+connect_to_new	lib/apartment/adapters/mysql2_adapter.rb	/^      def connect_to_new(tenant)$/;"	f	class:Apartment.Adapters.Mysql2SchemaAdapter
+connect_to_new	lib/apartment/adapters/postgresql_adapter.rb	/^      def connect_to_new(tenant = nil)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+connect_to_new	lib/apartment/adapters/sqlite3_adapter.rb	/^      def connect_to_new(tenant)$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+connection_class	lib/apartment.rb	/^    def connection_class$/;"	f	module:Apartment
+const_missing	lib/apartment/tenant.rb	/^  def self.const_missing(const_name)$/;"	S	module:Apartment
+copy_files	lib/generators/apartment/install/install_generator.rb	/^    def copy_files$/;"	f	class:Apartment.InstallGenerator
+copy_schema_migrations	lib/apartment/adapters/postgresql_adapter.rb	/^      def copy_schema_migrations$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+create	lib/apartment/adapters/abstract_adapter.rb	/^      def create(tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+create_schema	spec/support/apartment_helpers.rb	/^    def create_schema(schema)$/;"	f	module:Apartment.Test
+create_tenant	lib/apartment/adapters/abstract_adapter.rb	/^      def create_tenant(tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+create_tenant	lib/apartment/adapters/sqlite3_adapter.rb	/^      def create_tenant(tenant)$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+create_tenant_command	lib/apartment/adapters/abstract_adapter.rb	/^      def create_tenant_command(conn, tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+create_tenant_command	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^      def create_tenant_command(conn, tenant)$/;"	f	class:Apartment.Adapters.JDBCPostgresqlAdapter
+create_tenant_command	lib/apartment/adapters/postgresql_adapter.rb	/^      def create_tenant_command(conn, tenant)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+create_users	spec/dummy/db/seeds.rb	/^def create_users$/;"	f
+create_users	spec/dummy/db/seeds/import.rb	/^def create_users$/;"	f
+creating models	spec/tenant_spec.rb	/^        context "creating models" do$/;"	c
+current	lib/apartment/adapters/abstract_adapter.rb	/^      def current$/;"	f	class:Apartment.Adapters.AbstractAdapter
+current	lib/apartment/adapters/postgresql_adapter.rb	/^      def current$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+current	lib/apartment/adapters/sqlite3_adapter.rb	/^      def current$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+current_database	lib/apartment/adapters/abstract_adapter.rb	/^      def current_database$/;"	f	class:Apartment.Adapters.AbstractAdapter
+current_tenant	lib/apartment/adapters/abstract_adapter.rb	/^      def current_tenant$/;"	f	class:Apartment.Adapters.AbstractAdapter
+database key from tenant name	spec/examples/generic_adapter_custom_configuration_example.rb	/^  context "database key from tenant name" do$/;"	c
+database key taken from specific config	spec/examples/generic_adapter_custom_configuration_example.rb	/^  context "database key taken from specific config" do$/;"	c
+database migration	spec/tasks/apartment_rake_spec.rb	/^  context 'database migration' do$/;"	c
+database_file	lib/apartment/adapters/sqlite3_adapter.rb	/^      def database_file(tenant)$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+database_names	lib/apartment.rb	/^    def database_names$/;"	f	module:Apartment
+database_names=	lib/apartment.rb	/^    def database_names=(names)$/;"	f	module:Apartment
+database_schema_file	lib/apartment.rb	/^    def database_schema_file$/;"	f	module:Apartment
+database_structure_file	lib/apartment.rb	/^    def database_structure_file$/;"	f	module:Apartment
+databases	spec/unit/config_spec.rb	/^    context "databases" do$/;"	c
+db_config_for	lib/apartment.rb	/^    def db_config_for(tenant)$/;"	f	module:Apartment
+db_connection_config	lib/apartment/adapters/abstract_adapter.rb	/^      def db_connection_config(tenant)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+db_migrate_tenants	lib/apartment.rb	/^    def db_migrate_tenants$/;"	f	module:Apartment
+dbname	lib/apartment/adapters/postgresql_adapter.rb	/^      def dbname$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+default_schema	lib/apartment.rb	/^    def default_schema$/;"	f	module:Apartment
+default_tenant	lib/apartment/adapters/abstract_adapter.rb	/^      def default_tenant$/;"	f	class:Apartment.Adapters.AbstractAdapter
+deprecation_warning	lib/apartment/elevators/generic.rb	/^      def deprecation_warning$/;"	f	class:Apartment.Elevators.Generic
+down	spec/dummy/db/migrate/20110613152810_create_dummy_models.rb	/^  def self.down$/;"	S	class:CreateDummyModels
+down	spec/dummy/db/migrate/20111202022214_create_table_books.rb	/^  def down$/;"	f	class:CreateTableBooks
+drop	lib/apartment/adapters/abstract_adapter.rb	/^      def drop(tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+drop	lib/apartment/adapters/sqlite3_adapter.rb	/^      def drop(tenant)$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+drop_command	lib/apartment/adapters/abstract_adapter.rb	/^      def drop_command(conn, tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+drop_command	lib/apartment/adapters/postgresql_adapter.rb	/^      def drop_command(conn, tenant)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+drop_schema	spec/support/apartment_helpers.rb	/^    def drop_schema(schema)$/;"	f	module:Apartment.Test
+each	lib/apartment/adapters/abstract_adapter.rb	/^      def each(tenants = Apartment.tenant_names)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+enhance!	lib/apartment/tasks/enhancements.rb	/^      def enhance!$/;"	S	class:Apartment.RakeTaskEnhancer
+enhance_task	lib/apartment/tasks/enhancements.rb	/^      def enhance_task(task)$/;"	S	class:Apartment.RakeTaskEnhancer
+environmentify	lib/apartment/adapters/abstract_adapter.rb	/^      def environmentify(tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+excluded_models	lib/apartment.rb	/^    def excluded_models$/;"	f	module:Apartment
+excluded_subdomains	lib/apartment/elevators/subdomain.rb	/^      def self.excluded_subdomains$/;"	S	class:Apartment.Elevators.Subdomain
+excluded_subdomains=	lib/apartment/elevators/subdomain.rb	/^      def self.excluded_subdomains=(arg)$/;"	S	class:Apartment.Elevators.Subdomain
+extract_tenant_config	lib/apartment.rb	/^    def extract_tenant_config$/;"	f	module:Apartment
+full_search_path	lib/apartment/adapters/postgresql_adapter.rb	/^      def full_search_path$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+get_custom_db_conf	spec/examples/generic_adapter_custom_configuration_example.rb	/^  def get_custom_db_conf$/;"	f
+import_database_schema	lib/apartment/adapters/abstract_adapter.rb	/^      def import_database_schema$/;"	f	class:Apartment.Adapters.AbstractAdapter
+import_database_schema	lib/apartment/adapters/postgresql_adapter.rb	/^      def import_database_schema$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+in_new_session	spec/support/capybara_sessions.rb	/^      def in_new_session(&block)$/;"	f	module:RSpec.Integration.CapybaraSessions
+included	spec/support/setup.rb	/^      def self.included(base)$/;"	S	module:Apartment.Spec.Setup
+index	spec/dummy/app/controllers/application_controller.rb	/^  def index$/;"	f	class:ApplicationController
+init	lib/apartment/tenant.rb	/^    def init$/;"	f	module:Apartment.Tenant
+initialize	lib/apartment/adapters/abstract_adapter.rb	/^      def initialize(config)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+initialize	lib/apartment/adapters/mysql2_adapter.rb	/^      def initialize(config)$/;"	f	class:Apartment.Adapters.Mysql2Adapter
+initialize	lib/apartment/adapters/mysql2_adapter.rb	/^      def initialize(config)$/;"	f	class:Apartment.Adapters.Mysql2SchemaAdapter
+initialize	lib/apartment/adapters/postgresql_adapter.rb	/^      def initialize(config)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+initialize	lib/apartment/adapters/sqlite3_adapter.rb	/^      def initialize(config)$/;"	f	class:Apartment.Adapters.Sqlite3Adapter
+initialize	lib/apartment/elevators/generic.rb	/^      def initialize(app, processor = nil)$/;"	f	class:Apartment.Elevators.Generic
+initialize	lib/apartment/elevators/host_hash.rb	/^      def initialize(app, hash = {}, processor = nil)$/;"	f	class:Apartment.Elevators.HostHash
+initialize	lib/apartment/reloader.rb	/^    def initialize(app)$/;"	f	class:Apartment.Reloader
+jdbc_mysql_adapter	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^    def self.jdbc_mysql_adapter(config)$/;"	S	module:Apartment.Tenant
+jdbc_postgresql_adapter	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^    def self.jdbc_postgresql_adapter(config)$/;"	S	module:Apartment.Tenant
+load_or_abort	lib/apartment/adapters/abstract_adapter.rb	/^      def load_or_abort(file)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+load_or_abort_sql	lib/apartment/adapters/abstract_adapter.rb	/^      def load_or_abort_sql(file)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+load_schema	spec/support/apartment_helpers.rb	/^    def load_schema(version = 3)$/;"	f	module:Apartment.Test
+migrate	lib/apartment/migrator.rb	/^    def migrate(database)$/;"	f	module:Apartment.Migrator
+migrate	spec/support/apartment_helpers.rb	/^    def migrate$/;"	f	module:Apartment.Test
+multi_tenantify	lib/apartment/adapters/abstract_adapter.rb	/^      def multi_tenantify(tenant, with_database = true)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+multi_tenantify_with_tenant_db_name	lib/apartment/adapters/abstract_adapter.rb	/^      def multi_tenantify_with_tenant_db_name(config, tenant)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+multi_tenantify_with_tenant_db_name	lib/apartment/adapters/abstract_jdbc_adapter.rb	/^      def multi_tenantify_with_tenant_db_name(config, tenant)$/;"	f	class:Apartment.Adapters.AbstractJDBCAdapter
+multi_tenantify_with_tenant_db_name	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^      def multi_tenantify_with_tenant_db_name(config, tenant)$/;"	f	class:Apartment.Adapters.JDBCPostgresqlAdapter
+mysql2_adapter	lib/apartment/adapters/mysql2_adapter.rb	/^    def self.mysql2_adapter(config)$/;"	S	module:Apartment.Tenant
+named_host?	lib/apartment/elevators/subdomain.rb	/^      def named_host?(host)$/;"	f	module:Apartment.Elevators
+nested subdomains	spec/unit/elevators/first_subdomain_spec.rb	/^    context "nested subdomains" do$/;"	c
+new_session	spec/support/capybara_sessions.rb	/^      def new_session$/;"	f	module:RSpec.Integration.CapybaraSessions
+next_db	spec/support/apartment_helpers.rb	/^    def next_db$/;"	f	module:Apartment.Test
+no subdomain	spec/unit/elevators/first_subdomain_spec.rb	/^    context "no subdomain" do$/;"	c
+numeric database names	spec/examples/schema_adapter_examples.rb	/^    context "numeric database names" do$/;"	c
+numeric databases	spec/examples/schema_adapter_examples.rb	/^    context "numeric databases" do$/;"	c
+one subdomain	spec/unit/elevators/first_subdomain_spec.rb	/^    context "one subdomain" do$/;"	c
+parse_database_name	lib/apartment/elevators/generic.rb	/^      def parse_database_name(request)$/;"	f	class:Apartment.Elevators.Generic
+parse_method	lib/apartment/elevators/generic.rb	/^      def parse_method$/;"	f	class:Apartment.Elevators.Generic
+parse_tenant_name	lib/apartment/elevators/domain.rb	/^      def parse_tenant_name(request)$/;"	f	class:Apartment.Elevators.Domain
+parse_tenant_name	lib/apartment/elevators/first_subdomain.rb	/^      def parse_tenant_name(request)$/;"	f	class:Apartment.Elevators.FirstSubdomain
+parse_tenant_name	lib/apartment/elevators/generic.rb	/^      def parse_tenant_name(request)$/;"	f	class:Apartment.Elevators.Generic
+parse_tenant_name	lib/apartment/elevators/host_hash.rb	/^      def parse_tenant_name(request)$/;"	f	class:Apartment.Elevators.HostHash
+parse_tenant_name	lib/apartment/elevators/subdomain.rb	/^      def parse_tenant_name(request)$/;"	f	class:Apartment.Elevators.Subdomain
+parse_tenant_name	spec/unit/elevators/generic_spec.rb	/^    def parse_tenant_name(*)$/;"	f	class:MyElevator
+patch_search_path	lib/apartment/adapters/postgresql_adapter.rb	/^      def patch_search_path(sql)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+persistent_schemas	lib/apartment.rb	/^    def persistent_schemas$/;"	f	module:Apartment
+persistent_schemas	lib/apartment/adapters/postgresql_adapter.rb	/^      def persistent_schemas$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+pg_dump_schema	lib/apartment/adapters/postgresql_adapter.rb	/^      def pg_dump_schema$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+pg_dump_schema_migrations_data	lib/apartment/adapters/postgresql_adapter.rb	/^      def pg_dump_schema_migrations_data$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+postgis_adapter	lib/apartment/adapters/postgis_adapter.rb	/^    def self.postgis_adapter(config)$/;"	S	module:Apartment.Tenant
+postgresql_adapter	lib/apartment/adapters/postgresql_adapter.rb	/^    def self.postgresql_adapter(config)$/;"	S	module:Apartment.Tenant
+process	lib/apartment/adapters/abstract_adapter.rb	/^      def process(tenant = nil, &block)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+process_excluded_model	lib/apartment/adapters/abstract_adapter.rb	/^      def process_excluded_model(excluded_model)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+process_excluded_model	lib/apartment/adapters/mysql2_adapter.rb	/^      def process_excluded_model(model)$/;"	f	class:Apartment.Adapters.Mysql2SchemaAdapter
+process_excluded_model	lib/apartment/adapters/postgresql_adapter.rb	/^      def process_excluded_model(excluded_model)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+process_excluded_models	lib/apartment/adapters/abstract_adapter.rb	/^      def process_excluded_models$/;"	f	class:Apartment.Adapters.AbstractAdapter
+query caching	spec/integration/query_caching_spec.rb	/^describe 'query caching' do$/;"	d
+raise_connect_error!	lib/apartment/adapters/abstract_adapter.rb	/^      def raise_connect_error!(tenant, exception)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+raise_create_tenant_error!	lib/apartment/adapters/abstract_adapter.rb	/^      def raise_create_tenant_error!(tenant, exception)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+raise_drop_tenant_error!	lib/apartment/adapters/abstract_adapter.rb	/^      def raise_drop_tenant_error!(tenant, exception)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+reload!	lib/apartment/console.rb	/^def reload!(print=true)$/;"	f
+reload!	lib/apartment/tenant.rb	/^    def reload!(config = nil)$/;"	f	module:Apartment.Tenant
+rescuable_exceptions	lib/apartment/adapters/abstract_adapter.rb	/^      def rescuable_exceptions$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+rescue_from	lib/apartment/adapters/abstract_adapter.rb	/^      def rescue_from$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+rescue_from	lib/apartment/adapters/abstract_jdbc_adapter.rb	/^      def rescue_from$/;"	f	class:Apartment.Adapters.AbstractJDBCAdapter
+rescue_from	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^      def rescue_from$/;"	f	class:Apartment.Adapters.JDBCPostgresqlAdapter
+rescue_from	lib/apartment/adapters/jdbc_postgresql_adapter.rb	/^      def rescue_from$/;"	f	class:Apartment.Adapters.JDBCPostgresqlSchemaAdapter
+rescue_from	lib/apartment/adapters/mysql2_adapter.rb	/^      def rescue_from$/;"	f	class:Apartment.Adapters.Mysql2Adapter
+rescue_from	lib/apartment/adapters/postgresql_adapter.rb	/^      def rescue_from$/;"	f	class:Apartment.Adapters.PostgresqlAdapter
+reset	lib/apartment.rb	/^    def reset$/;"	f	module:Apartment
+reset	lib/apartment/adapters/abstract_adapter.rb	/^      def reset$/;"	f	class:Apartment.Adapters.AbstractAdapter
+reset	lib/apartment/adapters/mysql2_adapter.rb	/^      def reset$/;"	f	class:Apartment.Adapters.Mysql2SchemaAdapter
+reset	lib/apartment/adapters/postgresql_adapter.rb	/^      def reset$/;"	f	class:Apartment.Adapters.PostgresqlSchemaAdapter
+reset	spec/support/apartment_helpers.rb	/^    def reset$/;"	f	module:Apartment.Test
+reset_on_connection_exception?	lib/apartment/adapters/abstract_adapter.rb	/^      def reset_on_connection_exception?$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+reset_on_connection_exception?	lib/apartment/adapters/jdbc_mysql_adapter.rb	/^      def reset_on_connection_exception?$/;"	f	class:Apartment.Adapters.JDBCMysqlAdapter
+reset_on_connection_exception?	lib/apartment/adapters/mysql2_adapter.rb	/^      def reset_on_connection_exception?$/;"	f	class:Apartment.Adapters.Mysql2SchemaAdapter
+rollback	lib/apartment/migrator.rb	/^    def rollback(database, step = 1)$/;"	f	module:Apartment.Migrator
+rollback	spec/support/apartment_helpers.rb	/^    def rollback$/;"	f	module:Apartment.Test
+run	lib/apartment/migrator.rb	/^    def run(direction, database, version)$/;"	f	module:Apartment.Migrator
+seed paths	spec/tenant_spec.rb	/^    context "seed paths" do$/;"	c
+seed_data	lib/apartment/adapters/abstract_adapter.rb	/^      def seed_data$/;"	f	class:Apartment.Adapters.AbstractAdapter
+seed_data_file	lib/apartment.rb	/^    def seed_data_file$/;"	f	module:Apartment
+should_enhance?	lib/apartment/tasks/enhancements.rb	/^      def should_enhance?$/;"	S	class:Apartment.RakeTaskEnhancer
+specific_connection	spec/examples/generic_adapter_custom_configuration_example.rb	/^  def specific_connection$/;"	f
+sqlite3_adapter	lib/apartment/adapters/sqlite3_adapter.rb	/^    def self.sqlite3_adapter(config)$/;"	S	module:Apartment.Tenant
+subdomain	lib/apartment/elevators/subdomain.rb	/^      def subdomain(host)$/;"	f	module:Apartment.Elevators
+subdomain	spec/unit/elevators/first_subdomain_spec.rb	/^  describe "subdomain" do$/;"	d
+subdomains	lib/apartment/elevators/subdomain.rb	/^      def subdomains(host)$/;"	f	module:Apartment.Elevators
+switch	lib/apartment/adapters/abstract_adapter.rb	/^      def switch(tenant = nil)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+switch!	lib/apartment/adapters/abstract_adapter.rb	/^      def switch!(tenant = nil)$/;"	f	class:Apartment.Adapters.AbstractAdapter
+tenant_names	lib/apartment.rb	/^    def tenant_names$/;"	f	module:Apartment
+tenant_names	spec/adapters/jdbc_mysql_adapter_spec.rb	/^    def tenant_names$/;"	f
+tenant_names	spec/adapters/jdbc_postgresql_adapter_spec.rb	/^      def tenant_names$/;"	f
+tenant_names	spec/adapters/mysql2_adapter_spec.rb	/^    def tenant_names$/;"	f
+tenant_names	spec/adapters/postgresql_adapter_spec.rb	/^      def tenant_names$/;"	f
+tenant_names	spec/adapters/sqlite3_adapter_spec.rb	/^      def tenant_names$/;"	f
+tenant_names as Hash	spec/unit/config_spec.rb	/^      context "tenant_names as Hash" do$/;"	c
+tenant_names as proc returning a Hash	spec/unit/config_spec.rb	/^      context "tenant_names as proc returning a Hash" do$/;"	c
+tenant_names as proc returning an array	spec/unit/config_spec.rb	/^      context "tenant_names as proc returning an array" do$/;"	c
+tenant_names as string array	spec/unit/config_spec.rb	/^      context "tenant_names as string array" do$/;"	c
+tenant_names_from_array	spec/unit/config_spec.rb	/^    def tenant_names_from_array(names)$/;"	f
+tenants_with_config	lib/apartment.rb	/^    def tenants_with_config$/;"	f	module:Apartment
+threadsafety	spec/tenant_spec.rb	/^      context "threadsafety" do$/;"	c
+tld_length	lib/apartment.rb	/^    def tld_length$/;"	f	module:Apartment
+up	spec/dummy/db/migrate/20110613152810_create_dummy_models.rb	/^  def self.up$/;"	S	class:CreateDummyModels
+up	spec/dummy/db/migrate/20111202022214_create_table_books.rb	/^  def up$/;"	f	class:CreateTableBooks
+use_postgres_schemas	lib/apartment.rb	/^    def use_postgres_schemas$/;"	f	module:Apartment
+use_postgres_schemas=	lib/apartment.rb	/^    def use_postgres_schemas=(to_use_or_not_to_use)$/;"	f	module:Apartment
+using - the equivalent of - schemas	spec/adapters/mysql2_adapter_spec.rb	/^    context "using - the equivalent of - schemas" do$/;"	c
+using apartment within an engine	spec/integration/use_within_an_engine_spec.rb	/^describe 'using apartment within an engine' do$/;"	d
+using connections	spec/adapters/mysql2_adapter_spec.rb	/^    context "using connections" do$/;"	c
+using connections	spec/adapters/postgresql_adapter_spec.rb	/^    context "using connections" do$/;"	c
+using connections	spec/adapters/sqlite3_adapter_spec.rb	/^    context "using connections" do$/;"	c
+using databases	spec/adapters/jdbc_postgresql_adapter_spec.rb	/^    context "using databases" do$/;"	c
+using postgresql schemas	spec/unit/reloader_spec.rb	/^  context "using postgresql schemas" do$/;"	c
+using schemas	spec/adapters/jdbc_postgresql_adapter_spec.rb	/^    context "using schemas" do$/;"	c
+using schemas with SQL dump	spec/adapters/postgresql_adapter_spec.rb	/^    context "using schemas with SQL dump" do$/;"	c
+using schemas with schema.rb	spec/adapters/postgresql_adapter_spec.rb	/^    context "using schemas with schema.rb" do$/;"	c
+warn	lib/apartment/deprecation.rb	/^    def self.warn(message)$/;"	S	module:Apartment.Deprecation
+when Apartment.db_migrate_tenants is false	spec/integration/use_within_an_engine_spec.rb	/^  context 'when Apartment.db_migrate_tenants is false' do$/;"	c
+with excluded models	spec/tenant_spec.rb	/^        context "with excluded models" do$/;"	c
+with prefix and schemas	spec/tenant_spec.rb	/^    context "with prefix and schemas" do$/;"	c
+with prepend and append	spec/adapters/sqlite3_adapter_spec.rb	/^    context "with prepend and append" do$/;"	c
+with schemas	spec/tenant_spec.rb	/^    context "with schemas" do$/;"	c
+with version	spec/tasks/apartment_rake_spec.rb	/^      context "with version" do$/;"	c
+with x number of databases	spec/integration/apartment_rake_integration_spec.rb	/^  context "with x number of databases" do$/;"	c
+with_neutral_connection	lib/apartment/adapters/abstract_adapter.rb	/^     def with_neutral_connection(tenant, &block)$/;"	f	method:Apartment.Adapters.AbstractAdapter.multi_tenantify_with_tenant_db_name
+with_pg_env	lib/apartment/adapters/postgresql_adapter.rb	/^      def with_pg_env(&block)$/;"	f	class:Apartment.Adapters.PostgresqlSchemaFromSqlAdapter
+without a version	spec/tasks/apartment_rake_spec.rb	/^      context "without a version" do$/;"	c
