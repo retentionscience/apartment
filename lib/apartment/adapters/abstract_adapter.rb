@@ -214,7 +214,7 @@ module Apartment
       def import_database_schema
         ActiveRecord::Schema.verbose = false    # do not log schema load output.
 
-        if Apartment.database_structure_file
+        if Apartment.database_structure_file && File.exists?(Apartment.database_structure_file)
           load_or_abort_sql(Apartment.database_structure_file)
         elsif Apartment.database_schema_file
           load_or_abort(Apartment.database_schema_file)
