@@ -151,7 +151,11 @@ module Apartment
       def import_database_schema
         ActiveRecord::Schema.verbose = false    # do not log schema load output.
 
-        load_or_abort(Apartment.database_schema_file) if Apartment.database_schema_file
+        if Apartment.database_structure_file
+          load_or_abort_sql(Apartment.database_structure_file)
+        elsif Apartment.database_schema_file
+          load_or_abort(Apartment.database_schema_file)
+        end
       end
 
       #   Return a new config that is multi-tenanted
@@ -159,6 +163,17 @@ module Apartment
       def multi_tenantify(database)
         @config.clone.tap do |config|
           config[:database] = environmentify(database)
+        end
+      end
+
+      #   Load a SQL file or abort if it doesn't exists
+      #
+      def load_or_abort_sql(file)
+        if File.exists?(file)
+          sql_statements = File.read(file).split(";").map{ |q| q.strip }
+          sql_statements.each { |sql| Apartment.connection.execute( sql ) }
+        else
+          abort %{#{file} doesn't exist yet}
         end
       end
 
