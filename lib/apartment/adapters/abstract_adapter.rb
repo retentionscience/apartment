@@ -19,10 +19,9 @@ module Apartment
       #
       #   @param {String} tenant Tenant name
       #
-      def create(tenant)
+      def create(tenant, options = {})
         run_callbacks :create do
-          create_tenant(tenant)
-
+          create_tenant(tenant, options)
           switch(tenant) do
             import_database_schema
 
@@ -166,16 +165,16 @@ module Apartment
       #
       #   @param {String} tenant Database name
       #
-      def create_tenant(tenant)
+      def create_tenant(tenant, options = {})
         with_neutral_connection(tenant) do |conn|
-          create_tenant_command(conn, tenant)
+          create_tenant_command(conn, tenant, options)
         end
       rescue *rescuable_exceptions => exception
         raise_create_tenant_error!(tenant, exception)
       end
 
-      def create_tenant_command(conn, tenant)
-        conn.create_database(environmentify(tenant), @config)
+      def create_tenant_command(conn, tenant, options = {})
+        conn.create_database(environmentify(tenant), @config.merge(options))
       end
 
       #   Connect to new tenant
