@@ -13,8 +13,8 @@ module Apartment
       #
       #   @param {String} tenant Tenant name
       #
-      def create(tenant)
-        create_tenant(tenant)
+      def create(tenant, options = {})
+        create_tenant(tenant, options)
 
         process(tenant) do
           import_database_schema
@@ -115,8 +115,8 @@ module Apartment
       #
       #   @param {String} tenant Database name
       #
-      def create_tenant(tenant)
-        Apartment.connection.create_database( environmentify(tenant) )
+      def create_tenant(tenant, options = {})
+        Apartment.connection.create_database( environmentify(tenant), @config.merge(options) )
 
       rescue *rescuable_exceptions
         raise DatabaseExists, "The tenant #{environmentify(tenant)} already exists."
