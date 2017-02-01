@@ -15,8 +15,8 @@ module Apartment
       #
       #   @param {String} database Database name
       #
-      def create(database)
-        create_database(database)
+      def create(database, options = {})
+        create_database(database, options)
 
         process(database) do
           import_database_schema
@@ -108,8 +108,8 @@ module Apartment
       #
       #   @param {String} database Database name
       #
-      def create_database(database)
-        Apartment.connection.create_database( environmentify(database), @config )
+      def create_database(database, options = {})
+        Apartment.connection.create_database( environmentify(database), @config.merge(options) )
 
       rescue *rescuable_exceptions
         raise DatabaseExists, "The database #{environmentify(database)} already exists."
