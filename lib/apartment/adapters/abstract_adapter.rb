@@ -17,7 +17,7 @@ module Apartment
         create_tenant(tenant, options)
 
         process(tenant) do
-          import_database_schema
+          import_database_schema(tenant)
 
           # Seed data if appropriate
           seed_data if Apartment.seed_after_create
@@ -155,11 +155,11 @@ module Apartment
 
       #   Import the database schema
       #
-      def import_database_schema
+      def import_database_schema(tenant)
         ActiveRecord::Schema.verbose = false    # do not log schema load output.
 
         if Apartment.database_structure_file && File.exists?(Apartment.database_structure_file)
-          load_or_abort_sql(Apartment.database_structure_file)
+          load_or_abort_sql(Apartment.database_structure_file, tenant)
         elsif Apartment.database_schema_file
           load_or_abort(Apartment.database_schema_file)
         end
@@ -175,14 +175,36 @@ module Apartment
 
       #   Load a SQL file or abort if it doesn't exists
       #
-      def load_or_abort_sql(file)
+      def load_or_abort_sql(file, tenant)
         if File.exists?(file)
-          # Get rid of AUTO_INCREMENT, see http://stackoverflow.com/questions/2210719/out-of-sync-auto-increment-values-in-development-structure-sql-from-rails-mysql
-          sql_statements = File.read(file).split("\n\n").map{ |q| q.strip.gsub(/ AUTO_INCREMENT=\d*/, '') }
-          sql_statements.each { |sql| Apartment.connection.execute( sql ) }
+          structure_load(file, environmentify(tenant))
         else
           abort %{#{file} doesn't exist yet}
         end
+      end
+
+      # Took these methods from ActiveRecord::Tasks::MySQLDatabaseTasks
+
+      def structure_load(filename, database)
+        args = prepare_command_options('mysql')
+        args.concat(['--execute', %{SET FOREIGN_KEY_CHECKS = 0; SOURCE #{filename}; SET FOREIGN_KEY_CHECKS = 1}])
+        args.concat(["--database", "#{database}"])
+        Kernel.system(*args)
+      end
+
+      def prepare_command_options(command)
+        # Is there a better way to access this?
+        configuration = Apartment.connection.instance_variable_get("@config").stringify_keys
+
+        args = [command]
+        args.concat(['--user', configuration['username']]) if configuration['username']
+        args << "--password=#{configuration['password']}"  if configuration['password']
+        args.concat(['--default-character-set', configuration['encoding']]) if configuration['encoding']
+        configuration.slice('host', 'port', 'socket').each do |k, v|
+          args.concat([ "--#{k}", v.to_s ]) if v
+        end
+
+        args
       end
 
       #   Load a file or abort if it doesn't exists
