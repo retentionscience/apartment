@@ -13,11 +13,11 @@ module Apartment
       #
       #   @param {String} tenant Tenant name
       #
-      def create(tenant)
-        create_tenant(tenant)
+      def create(tenant, options = {})
+        create_tenant(tenant, options)
 
         process(tenant) do
-          import_database_schema
+          import_database_schema(tenant)
 
           # Seed data if appropriate
           seed_data if Apartment.seed_after_create
@@ -115,8 +115,8 @@ module Apartment
       #
       #   @param {String} tenant Database name
       #
-      def create_tenant(tenant)
-        Apartment.connection.create_database( environmentify(tenant) )
+      def create_tenant(tenant, options = {})
+        Apartment.connection.create_database( environmentify(tenant), @config.merge(options) )
 
       rescue *rescuable_exceptions
         raise DatabaseExists, "The tenant #{environmentify(tenant)} already exists."
@@ -155,10 +155,14 @@ module Apartment
 
       #   Import the database schema
       #
-      def import_database_schema
+      def import_database_schema(tenant)
         ActiveRecord::Schema.verbose = false    # do not log schema load output.
 
-        load_or_abort(Apartment.database_schema_file) if Apartment.database_schema_file
+        if Apartment.database_structure_file && File.exists?(Apartment.database_structure_file)
+          load_or_abort_sql(Apartment.database_structure_file, tenant)
+        elsif Apartment.database_schema_file
+          load_or_abort(Apartment.database_schema_file)
+        end
       end
 
       #   Return a new config that is multi-tenanted
@@ -167,6 +171,40 @@ module Apartment
         @config.clone.tap do |config|
           config[:database] = environmentify(tenant)
         end
+      end
+
+      #   Load a SQL file or abort if it doesn't exists
+      #
+      def load_or_abort_sql(file, tenant)
+        if File.exists?(file)
+          structure_load(file, environmentify(tenant))
+        else
+          abort %{#{file} doesn't exist yet}
+        end
+      end
+
+      # Took these methods from ActiveRecord::Tasks::MySQLDatabaseTasks
+
+      def structure_load(filename, database)
+        args = prepare_command_options('mysql')
+        args.concat(['--execute', %{SET FOREIGN_KEY_CHECKS = 0; SOURCE #{filename}; SET FOREIGN_KEY_CHECKS = 1}])
+        args.concat(["--database", "#{database}"])
+        Kernel.system(*args)
+      end
+
+      def prepare_command_options(command)
+        # Is there a better way to access this?
+        configuration = Apartment.connection.instance_variable_get("@config").stringify_keys
+
+        args = [command]
+        args.concat(['--user', configuration['username']]) if configuration['username']
+        args << "--password=#{configuration['password']}"  if configuration['password']
+        args.concat(['--default-character-set', configuration['encoding']]) if configuration['encoding']
+        configuration.slice('host', 'port', 'socket').each do |k, v|
+          args.concat([ "--#{k}", v.to_s ]) if v
+        end
+
+        args
       end
 
       #   Load a file or abort if it doesn't exists
