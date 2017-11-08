@@ -21,6 +21,26 @@ module Apartment
 
     protected
 
+      def connect_to_new(tenant)
+        return reset if tenant.nil?
+
+        if server_changed?(tenant)
+          return super(tenant)
+        else
+          Apartment.connection.execute "use `#{environmentify(tenant)}`"
+        end
+
+      rescue ActiveRecord::StatementInvalid => exception
+        Apartment::Tenant.reset
+        raise_connect_error!(tenant, exception)
+      end
+
+      def server_changed?(to_tenant)
+        multi_tenantify(to_tenant)[:host] != Apartment.connection_config[:host]
+      rescue
+        return false
+      end
+
       def rescue_from
         Mysql2::Error
       end
