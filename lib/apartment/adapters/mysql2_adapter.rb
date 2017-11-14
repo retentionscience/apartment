@@ -24,6 +24,7 @@ module Apartment
       def connect_to_new(tenant)
         return reset if tenant.nil?
 
+        check_tenant_config!(tenant)
         if server_changed?(tenant)
           return super(tenant)
         else
@@ -35,10 +36,17 @@ module Apartment
         raise_connect_error!(tenant, exception)
       end
 
+      def check_tenant_config!(tenant)
+        unless multi_tenantify(tenant).present?
+          error_msg = "missing tenant #{tenant} db config!!!"
+          raise error_msg
+        end
+      end
+
       def server_changed?(to_tenant)
         multi_tenantify(to_tenant)[:host] != Apartment.connection_config[:host]
       rescue
-        return false
+        return true
       end
 
       def rescue_from
