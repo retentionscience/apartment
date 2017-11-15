@@ -37,7 +37,7 @@ module Apartment
       end
 
       def check_tenant_config!(tenant)
-        unless multi_tenantify(tenant).present?
+        unless multi_tenantify(tenant)[:host].present?
           error_msg = "missing tenant #{tenant} db config!!!"
           raise error_msg
         end
