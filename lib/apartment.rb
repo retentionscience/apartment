@@ -33,7 +33,7 @@ module Apartment
     end
 
     def db_config_for(tenant)
-      (tenants_with_config[tenant] || connection_config).with_indifferent_access
+      (tenants_with_config[tenant] || {}).with_indifferent_access
     end
 
     # Whether or not db:migrate should also migrate tenants
