@@ -241,7 +241,7 @@ module Apartment
       def load_or_abort_sql(file)
         if File.exists?(file)
           # Get rid of AUTO_INCREMENT, see http://stackoverflow.com/questions/2210719/out-of-sync-auto-increment-values-in-development-structure-sql-from-rails-mysql
-          sql_statements = File.read(file).split(";").map{ |q| q.strip.gsub(/ AUTO_INCREMENT=\d*/, '') }
+          sql_statements = File.read(file).split(";").map{ |q| q.strip.gsub(/ AUTO_INCREMENT=\d*/, '') }.reject { |statement| statement.blank? }
           sql_statements.each { |sql| Apartment.connection.execute( sql ) }
         else
           abort %{#{file} doesn't exist yet}
