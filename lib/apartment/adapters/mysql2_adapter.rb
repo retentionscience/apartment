@@ -13,12 +13,6 @@ module Apartment
   module Adapters
     class Mysql2Adapter < AbstractAdapter
 
-      def initialize(config)
-        super
-
-        @default_tenant = config[:database]
-      end
-
     protected
 
       def connect_to_new(tenant)
@@ -28,12 +22,13 @@ module Apartment
         if server_changed?(tenant)
           return super(tenant)
         else
-          Apartment.connection.execute "use `#{environmentify(tenant)}`"
+          begin
+            Apartment.connection.execute "use `#{environmentify(tenant)}`"
+          rescue ActiveRecord::StatementInvalid => exception
+            Apartment.connection.execute "use `#{Apartment::Tenant.current}`"
+            raise_connect_error!(tenant, exception)
+          end
         end
-
-      rescue ActiveRecord::StatementInvalid => exception
-        Apartment::Tenant.reset
-        raise_connect_error!(tenant, exception)
       end
 
       def check_tenant_config!(tenant)
