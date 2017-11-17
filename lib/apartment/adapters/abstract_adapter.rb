@@ -54,7 +54,7 @@ module Apartment
       #   Note alias_method here doesn't work with inheritence apparently ??
       #
       def current
-        Apartment.connection.current_database
+        unenvironmentify(Apartment.connection.current_database)
       end
 
       #   Return the original public tenant
@@ -208,6 +208,19 @@ module Apartment
         end
       end
 
+      def unenvironmentify(tenant)
+        if tenant.include?(Rails.env)
+          if Apartment.prepend_environment
+            tenant.gsub(/^#{Rails.env}_/, "")
+          elsif Apartment.append_environment
+            tenant.gsub(/^_#{Rails.env}$/, "")
+          else
+            tenant
+          end
+        else
+          tenant
+        end
+      end
       #   Import the database schema
       #
       def import_database_schema
