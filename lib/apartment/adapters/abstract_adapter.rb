@@ -213,7 +213,7 @@ module Apartment
           if Apartment.prepend_environment
             tenant.gsub(/^#{Rails.env}_/, "")
           elsif Apartment.append_environment
-            tenant.gsub(/^_#{Rails.env}$/, "")
+            tenant.gsub(/_#{Rails.env}$/, "")
           else
             tenant
           end
