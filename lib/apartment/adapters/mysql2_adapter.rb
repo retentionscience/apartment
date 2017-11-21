@@ -25,7 +25,7 @@ module Apartment
           begin
             Apartment.connection.execute "use `#{environmentify(tenant)}`"
           rescue ActiveRecord::StatementInvalid => exception
-            Apartment.connection.execute "use `#{Apartment::Tenant.current}`"
+            Apartment.connection.execute "use `#{environmentify(Apartment::Tenant.current)}`"
             raise_connect_error!(tenant, exception)
           end
         end
