@@ -19,10 +19,9 @@ module Apartment
       #
       #   @param {String} tenant Tenant name
       #
-      def create(tenant)
+      def create(tenant, options = {})
         run_callbacks :create do
-          create_tenant(tenant)
-
+          create_tenant(tenant, options)
           switch(tenant) do
             import_database_schema
 
@@ -55,7 +54,7 @@ module Apartment
       #   Note alias_method here doesn't work with inheritence apparently ??
       #
       def current
-        Apartment.connection.current_database
+        unenvironmentify(Apartment.connection.current_database)
       end
 
       #   Return the original public tenant
@@ -166,16 +165,16 @@ module Apartment
       #
       #   @param {String} tenant Database name
       #
-      def create_tenant(tenant)
+      def create_tenant(tenant, options = {})
         with_neutral_connection(tenant) do |conn|
-          create_tenant_command(conn, tenant)
+          create_tenant_command(conn, tenant, options)
         end
       rescue *rescuable_exceptions => exception
         raise_create_tenant_error!(tenant, exception)
       end
 
-      def create_tenant_command(conn, tenant)
-        conn.create_database(environmentify(tenant))
+      def create_tenant_command(conn, tenant, options = {})
+        conn.create_database(environmentify(tenant), @config.merge(options))
       end
 
       #   Connect to new tenant
@@ -209,12 +208,29 @@ module Apartment
         end
       end
 
+      def unenvironmentify(tenant)
+        if tenant.include?(Rails.env)
+          if Apartment.prepend_environment
+            tenant.gsub(/^#{Rails.env}_/, "")
+          elsif Apartment.append_environment
+            tenant.gsub(/_#{Rails.env}$/, "")
+          else
+            tenant
+          end
+        else
+          tenant
+        end
+      end
       #   Import the database schema
       #
       def import_database_schema
         ActiveRecord::Schema.verbose = false    # do not log schema load output.
 
-        load_or_abort(Apartment.database_schema_file) if Apartment.database_schema_file
+        if Apartment.database_structure_file && File.exists?(Apartment.database_structure_file)
+          load_or_abort_sql(Apartment.database_structure_file)
+        elsif Apartment.database_schema_file
+          load_or_abort(Apartment.database_schema_file)
+        end
       end
 
       #   Return a new config that is multi-tenanted
@@ -231,6 +247,18 @@ module Apartment
 
       def multi_tenantify_with_tenant_db_name(config, tenant)
         config[:database] = environmentify(tenant)
+      end
+
+      #   Load a SQL file or abort if it doesn't exists
+      #
+      def load_or_abort_sql(file)
+        if File.exists?(file)
+          # Get rid of AUTO_INCREMENT, see http://stackoverflow.com/questions/2210719/out-of-sync-auto-increment-values-in-development-structure-sql-from-rails-mysql
+          sql_statements = File.read(file).split(";").map{ |q| q.strip.gsub(/ AUTO_INCREMENT=\d*/, '') }.reject { |statement| statement.blank? }
+          sql_statements.each { |sql| Apartment.connection.execute( sql ) }
+        else
+          abort %{#{file} doesn't exist yet}
+        end
       end
 
       #   Load a file or abort if it doesn't exists
