@@ -23,6 +23,8 @@ module Apartment
 
         check_tenant_config!(db_config)
         if server_changed?(db_config)
+          # The following rescue block is copy-pasted from AbstractAdapter
+          # (except for the part that makes another multi_tenantify call)
           begin
             Apartment.establish_connection(db_config)
             Apartment.connection.active? # call active? to manually check if this connection is valid
