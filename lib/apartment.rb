@@ -11,7 +11,7 @@ module Apartment
     extend Forwardable
 
     ACCESSOR_METHODS  = [:use_schemas, :use_sql, :seed_after_create, :prepend_environment, :append_environment, :with_multi_server_setup ]
-    WRITER_METHODS    = [:tenant_names, :database_structure_file, :database_schema_file, :excluded_models, :default_schema, :persistent_schemas, :connection_class, :tld_length, :db_migrate_tenants, :seed_data_file, :parallel_migration_threads]
+    WRITER_METHODS    = [:rsapi_db_config_getter, :tenant_names, :database_structure_file, :database_schema_file, :excluded_models, :default_schema, :persistent_schemas, :connection_class, :tld_length, :db_migrate_tenants, :seed_data_file, :parallel_migration_threads]
 
     attr_accessor(*ACCESSOR_METHODS)
     attr_writer(*WRITER_METHODS)
@@ -31,8 +31,19 @@ module Apartment
       extract_tenant_config
     end
 
+    # @param [String] tenant (e.g. "site_152" or "rsapi_#{Rails.env}")
+    # @return [ActiveSupport::HashWithIndifferentAccess] config to establish ActiveRecord::Base.connection to proper
+    # host and/or database
     def db_config_for(tenant)
-      (tenants_with_config[tenant] || {}).with_indifferent_access
+      if @rsapi_db_config_getter && @rsapi_db_config_getter.respond_to?(:call)
+        (@rsapi_db_config_getter.call(tenant) || {}).with_indifferent_access
+      else
+        # Fallback to the original implementation
+        (tenants_with_config[tenant] || {}).with_indifferent_access
+      end
+
+    rescue
+      {}
     end
 
     # Whether or not db:migrate should also migrate tenants
