@@ -5,22 +5,33 @@ module Apartment
 
     def self.mysql2_adapter(config)
       Apartment.use_schemas ?
-        Adapters::Mysql2SchemaAdapter.new(config) :
-        Adapters::Mysql2Adapter.new(config)
+          Adapters::Mysql2SchemaAdapter.new(config) :
+          Adapters::Mysql2Adapter.new(config)
     end
   end
 
   module Adapters
     class Mysql2Adapter < AbstractAdapter
 
-    protected
+      protected
 
+      # @param [String] tenant (e.g. "site_152" or "rsapi_#{Rails.env}")
       def connect_to_new(tenant)
         return reset if tenant.nil?
 
-        check_tenant_config!(tenant)
-        if server_changed?(tenant)
-          return super(tenant)
+        db_config = multi_tenantify(tenant)
+
+        check_tenant_config!(db_config)
+        if server_changed?(db_config)
+          # The following rescue block is copy-pasted from AbstractAdapter
+          # (except for the part that makes another multi_tenantify call)
+          begin
+            Apartment.establish_connection(db_config)
+            Apartment.connection.active? # call active? to manually check if this connection is valid
+          rescue *rescuable_exceptions => exception
+            Apartment::Tenant.reset if reset_on_connection_exception?
+            raise_connect_error!(tenant, exception)
+          end
         else
           begin
             Apartment.connection.execute "use `#{environmentify(tenant)}`"
@@ -31,15 +42,19 @@ module Apartment
         end
       end
 
-      def check_tenant_config!(tenant)
-        unless multi_tenantify(tenant)[:host].present?
-          error_msg = "missing tenant #{tenant} db config!!!"
+      # @param [ActiveSupport::HashWithIndifferentAccess] db_config to establish proper db connection
+      # (see ActiveRecord::Base.connection.instance_variable_get("@config"))
+      def check_tenant_config!(db_config)
+        unless db_config[:host].present?
+          error_msg = "missing tenant #{db_config} db config!!!"
           raise error_msg
         end
       end
 
-      def server_changed?(to_tenant)
-        multi_tenantify(to_tenant)[:host] != Apartment.connection_config[:host]
+      # @param [ActiveSupport::HashWithIndifferentAccess] db_config to establish proper db connection
+      # (see ActiveRecord::Base.connection.instance_variable_get("@config"))
+      def server_changed?(db_config)
+        db_config[:host] != Apartment.connection_config[:host]
       rescue
         return true
       end
@@ -63,7 +78,7 @@ module Apartment
         Apartment.connection.execute "use `#{default_tenant}`"
       end
 
-    protected
+      protected
 
       #   Connect to new tenant
       #
