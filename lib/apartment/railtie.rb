@@ -28,6 +28,7 @@ module Apartment
     #
     config.to_prepare do
       next if ARGV.any? { |arg| arg =~ /\Aassets:(?:precompile|clean)\z/ }
+
       begin
         Apartment.connection_class.connection_pool.with_connection do
           Apartment::Tenant.init

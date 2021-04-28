@@ -119,6 +119,39 @@ module Apartment
       end
       alias_method :seed, :seed_data
 
+      #   Prepend the environment if configured and the environment isn't already there
+      #
+      #   @param {String} tenant Database name
+      #   @return {String} tenant name with Rails environment *optionally* prepended
+      #
+      def environmentify(tenant)
+        unless tenant.include?(Rails.env)
+          if Apartment.prepend_environment
+            "#{Rails.env}_#{tenant}"
+          elsif Apartment.append_environment
+            "#{tenant}_#{Rails.env}"
+          else
+            tenant
+          end
+        else
+          tenant
+        end
+      end
+
+      def unenvironmentify(tenant)
+        if tenant.include?(Rails.env)
+          if Apartment.prepend_environment
+            tenant.gsub(/^#{Rails.env}_/, "")
+          elsif Apartment.append_environment
+            tenant.gsub(/_#{Rails.env}$/, "")
+          else
+            tenant
+          end
+        else
+          tenant
+        end
+      end
+
     protected
 
       def process_excluded_model(excluded_model)
@@ -162,38 +195,6 @@ module Apartment
         raise_connect_error!(tenant, exception)
       end
 
-      #   Prepend the environment if configured and the environment isn't already there
-      #
-      #   @param {String} tenant Database name
-      #   @return {String} tenant name with Rails environment *optionally* prepended
-      #
-      def environmentify(tenant)
-        unless tenant.include?(Rails.env)
-          if Apartment.prepend_environment
-            "#{Rails.env}_#{tenant}"
-          elsif Apartment.append_environment
-            "#{tenant}_#{Rails.env}"
-          else
-            tenant
-          end
-        else
-          tenant
-        end
-      end
-
-      def unenvironmentify(tenant)
-        if tenant.include?(Rails.env)
-          if Apartment.prepend_environment
-            tenant.gsub(/^#{Rails.env}_/, "")
-          elsif Apartment.append_environment
-            tenant.gsub(/_#{Rails.env}$/, "")
-          else
-            tenant
-          end
-        else
-          tenant
-        end
-      end
       #   Import the database schema
       #
       def import_database_schema
